@@ -8,6 +8,7 @@
       "formulahendry.code-runner",
       "abusaidm.html-snippets",
       "xabikos.JavaScriptSnippets",
-      "ecmel.vscode-html-css"
+      "ecmel.vscode-html-css",
+      "HansUXdev.bootstrap5-snippets"
     ]
 }
