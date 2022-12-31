@@ -32,7 +32,7 @@ def sign_up():
             flash('Password must be greater than 7.', category='error')
         else:
             #add user to the database.
-            flash('Account Category', category='success')
+            flash('Account Added', category='success')
     return render_template("sign_up.html")
 
 
