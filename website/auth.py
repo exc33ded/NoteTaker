@@ -1,13 +1,13 @@
 # Here will be all the routes for the authentication
 
 from flask import Blueprint, render_template, request, flash
+from .models import User
+from werkzeug.security import generate_password_hash, check_password_hash
 
 auth = Blueprint('auth', __name__)
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
-    data = request.form
-    print(data)
     return render_template('login.html')
 
 @auth.route('/logout')
@@ -31,6 +31,7 @@ def sign_up():
         elif len(password1) < 7:
             flash('Password must be greater than 7.', category='error')
         else:
+            new_user = User(email=email, first_name=firstName, password=password) # This is model
             #add user to the database.
             flash('Account Added', category='success')
     return render_template("sign_up.html")
